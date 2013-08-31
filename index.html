@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>tinychat</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    </head>
+    
+    <body>
+        <p id="status">---</p>
+        <form id="send">
+            <input type="text" id="uid">
+            <input type="text" id="msg" required>
+            <input type="submit" value="send">
+        </form>
+        
+        <table id="log">
+            <tr>
+                <th>uid</th>
+                <th>body</th>
+                <th>date</th>
+                <th>latitude</th>
+                <th>longitude</th>
+            </tr>
+        </table>
+        
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/dateformat.js"></script>
+        <script src="js/tinychat.js"></script>
+    </body>
+
+</html>
