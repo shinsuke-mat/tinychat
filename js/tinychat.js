@@ -27,7 +27,7 @@ $(function() {
 // WebSocketのセットアップメソッド
 function setupWebSocket() {
     // WebSocket作成
-    ws = new WebSocket('ws://133.30.159.3:8080/tinychat00/send');
+    ws = new WebSocket('ws://133.30.159.3:8080/tinychatXX/send');
 
     // WebSocket open時の処理
     ws.onopen = function() {
