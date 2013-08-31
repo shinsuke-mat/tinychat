@@ -1,6 +1,6 @@
 // 自分の緯度経度情報
-var latitude = 0;
-var longitude = 0;
+var lat = 0; // 緯度
+var lon = 0; // 経度
 var dateFormat = new DateFormat('yyyy/MM/dd HH:mm:ss');
 var ws;
 
@@ -27,7 +27,7 @@ $(function() {
 // WebSocketのセットアップメソッド
 function setupWebSocket() {
     // WebSocket作成
-    ws = new WebSocket('ws://133.30.159.3:8080/tinychatXX/send');
+    ws = new WebSocket('ws://133.30.159.3:8080/tinychat00/send');
 
     // WebSocket open時の処理
     ws.onopen = function() {
@@ -43,8 +43,8 @@ function setupWebSocket() {
             '<td>' + json.uid + '</td>' +
             '<td>' + json.msg + '</td>' +
             '<td>' + json.date + '</td>' + 
-            '<td>' + json.latitude + '</td>' +
-            '<td>' + json.longitude + '</td>'+ '</tr>');
+            '<td>' + json.lat + '</td>' +
+            '<td>' + json.lon + '</td>'+ '</tr>');
     }
 
     // WebSocket error時の処理
@@ -65,7 +65,7 @@ function sendMessage() {
     var date = dateFormat.format(new Date());
     
     // JSON形式のメッセージを生成
-    var message = {uid:uid, msg:msg, date:date, latitude:latitude, longitude:longitude};
+    var message = {uid:uid, msg:msg, date:date, lat:lat, lon:lon};
     
     // Stringに変換してサーバに送信
     ws.send(JSON.stringify(message));
