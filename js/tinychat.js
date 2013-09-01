@@ -39,7 +39,7 @@ function setupWebSocket() {
         var json = $.parseJSON(message.data);
 
         // テーブルのフォーマットでlogフィールドに書き出す
-        $('#log').prepend('<tr>' +
+        $('#log > tbody').prepend('<tr>' +
             '<td>' + json.uid + '</td>' +
             '<td>' + json.msg + '</td>' +
             '<td>' + json.date + '</td>' + 
